@@ -14,7 +14,11 @@ pipeline{
         stage('Testing'){
             steps{
                 script {
-                    sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                    if (isUnix()){
+                        sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                    } else {
+                    sh "npx cypress run"
+                    }
                 }
             }
         }
