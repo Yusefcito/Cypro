@@ -1,7 +1,7 @@
 pipeline{
     agent any //permite especificar el pipeline o stages se ejecuten
 
-    paremeters {
+    parameters {
         string(name: "SPEC  ", defaultValue: "cypress/e2e/**", description:"Ej: cypress/e2e/login/*.spec.js")
         choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "")
 
@@ -9,7 +9,6 @@ pipeline{
 
     options{
         ansiColor('xterm')
-
     }
 
     stages{
