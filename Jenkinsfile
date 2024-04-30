@@ -13,8 +13,8 @@ pipeline{
         }
         stage('Testing'){
             steps{
-                bat "npm i"
-                bat "npm cypress run --browser ${BROWSER} --spec ${SPEC}"
+                sh "npm i"
+                sh "npm cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage('Deploy'){
