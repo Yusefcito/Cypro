@@ -3,7 +3,7 @@ pipeline{
 
     parameters {
         string(name: "SPEC", defaultValue: "cypress/e2e/**", description:"Ej: cypress/e2e/login/*.spec.js")
-        
+        choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "")
 
     }
     stages{
@@ -14,8 +14,9 @@ pipeline{
         }
        stage('Testing'){
             steps{
-                sh "npm i"
-                sh "npx cypress run --record --key 88256a3a-0370-44d5-b6d4-760dff806cee"
+                bat "npm i"
+                bat "npx run --browser ${BROWSER} --spec ${SPEC}"
+
             }
         }
         stage('Deploy'){
