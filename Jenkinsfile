@@ -6,10 +6,6 @@ pipeline{
         choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "")
 
     }
-
-    options{
-    }
-
     stages{
         stage('Build'){
             steps{
