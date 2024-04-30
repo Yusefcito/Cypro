@@ -5,6 +5,10 @@ pipeline{
         string(name: "SPEC", defaultValue: "cypress/e2e/login/**", description: "cypress/")
         choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox','electron'], description: "elige navegador")
     }
+
+    options {
+        ansiColor('xterm')
+    }
     stages{
         stage('Build'){
             steps{
