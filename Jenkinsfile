@@ -14,8 +14,8 @@ pipeline{
         }
        stage('Testing'){
             steps{
-                bat "npm i"
-                bat "npx cypress run --record --key 88256a3a-0370-44d5-b6d4-760dff806cee --browser ${BROWSER} --spec ${SPEC}"
+                sh "npm i"
+                sh "npx cypress run --record --key 88256a3a-0370-44d5-b6d4-760dff806cee --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage('Deploy'){
