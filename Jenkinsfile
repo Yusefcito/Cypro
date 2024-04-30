@@ -2,8 +2,7 @@ pipeline{
     agent any //permite especificar el pipeline o stages se ejecuten
 
     parameters {
-        string(name: "SPEC", defaultValue: "cypress/e2e/login/**", description: "cypress/")
-        choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox','electron'], description: "elige navegador")
+        string(name: "SPEC", defaultValue: "cypress", description: "cypress/")
     }
 
     options {
@@ -18,7 +17,7 @@ pipeline{
         stage('Testing'){
             steps{
                 sh "npm i"
-                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                sh "npx cypress run --record --key 88256a3a-0370-44d5-b6d4-760dff806cee --browser electron --spec ${SPEC}"
             }
         }
         stage('Deploy'){
