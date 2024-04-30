@@ -3,7 +3,7 @@ pipeline{
 
     parameters {
         string(name: "SPEC", defaultValue: "cypress/", description: "cypress/**")
-        choice(name: "BROWSER", choices: ['crhome', 'edge', 'firefox'], description: "elige navegador")
+        choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'], description: "elige navegador")
     }
     stages{
         stage('Build'){
