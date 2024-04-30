@@ -2,14 +2,13 @@ pipeline{
     agent any //permite especificar el pipeline o stages se ejecuten
 
     parameters {
+        string(name: "SPEC", defaultValue: "cypress/", description: "cypress/**")
+        choice(name: "BROWSER", choices: ['crhome', 'edge', 'firefox'], description: "elige navegador")
     }
     stages{
         stage('Build'){
             steps{
-                script{
-                    sh "npm install"
-                }
-                
+                echo "Building application"                
             }
         }
         stage('Testing'){
