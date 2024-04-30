@@ -1,0 +1,18 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "runtests": "npm run test",
+    "cloud": "npx cypress run --record --key 88256a3a-0370-44d5-b6d4-760dff806cee"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.8.0",
+    "cypress-mailslurp": "^1.9.0"
+  }
+}
