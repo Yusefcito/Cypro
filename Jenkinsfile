@@ -1,17 +1,22 @@
 pipeline{
     agent any //permite especificar el pipeline o stages se ejecuten
 
+    parameters {
+    }
     stages{
         stage('Build'){
-            environment{
-                echo "Building application"
-                CYPRESS_RECORD_KEY = credentials('88256a3a-0370-44d5-b6d4-760dff806cee')
+            steps{
+                script{
+                    sh "npm install"
+                }
+                
             }
         }
         stage('Testing'){
-            steps {
-                sh 'npm ci'
-                sh "npm run test:ci:record"
+            steps{
+                script {
+                    sh "npx cypress run --record --key 88256a3a-0370-44d5-b6d4-760dff806cee --headless"
+                }
             }
         }
         stage('Deploy'){
