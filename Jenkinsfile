@@ -1,9 +1,6 @@
 pipeline{
     agent any //permite especificar el pipeline o stages se ejecuten
 
-    parameters {
-        string(name: "SPEC", defaultValue: "cypress", description: "cypress/")
-    }
 
     options {
         ansiColor('xterm')
