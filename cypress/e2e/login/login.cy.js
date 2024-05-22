@@ -25,7 +25,7 @@ describe("Suite de prueba con login", () => {
       .within(() => {
         cy.contains("Aviso");
         cy.contains("El email o password ingresado es incorrecto");
-        cy.contains("OK").click().click();
+        cy.contains("OK").click();
       });
   });
 
